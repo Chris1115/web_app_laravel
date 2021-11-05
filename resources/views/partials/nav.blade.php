@@ -9,7 +9,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link {{ ($title === "BisnisCap") ? 'active' : '' }}"href="/">Home</a>
-          <a class="nav-link {{ ($title === "about") ? 'active' : '' }}" href="/about">About</a>
+          <a class="nav-link {{ ($title === "About") ? 'active' : '' }}" href="/about">About</a>
         </div>
       </div>
     </div>

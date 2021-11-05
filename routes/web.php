@@ -21,6 +21,42 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
     return view('public/about',[
-        "title" => "about"
+        "title" => "About"
+    ]);
+});
+
+Route::get('/login', function () {
+    return view('public/login',[
+        "title" => "Login"
+    ]);
+});
+
+Route::get('/register', function () {
+    return view('public/register',[
+        "title" => "Legister"
+    ]);
+});
+
+Route::get('/course', function () {
+    return view('user/course',[
+        "title" => "Course"
+    ]);
+});
+
+Route::get('/forum', function () {
+    return view('user/forum',[
+        "title" => "Forum"
+    ]);
+});
+
+Route::get('/home', function () {
+    return view('user/home',[
+        "title" => "Home"
+    ]);
+});
+
+Route::get('/news', function () {
+    return view('user/news',[
+        "title" => "News"
     ]);
 });
