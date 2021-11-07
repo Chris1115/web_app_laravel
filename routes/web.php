@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// ini rute
+// ini rute dah
 
 Route::get('/', function () {
     return view('public/landing', [
