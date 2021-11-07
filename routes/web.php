@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// ini rute
+
 Route::get('/', function () {
     return view('public/landing', [
         "title" => "BisnisCap"
