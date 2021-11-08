@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,31 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Routes for public access page
+Route::get('/', [PublicController::class, 'index']);
+Route::get('/about', [PublicController::class, 'about']);
+Route::get('/login', [PublicController::class, 'login']);
+Route::get('/register', [PublicController::class, 'register']);
 
-Route::get('/', function () {
-    return view('public/landing', [
-        "title" => "BisnisCap"
-    ]);
-});
 
-Route::get('/about', function () {
-    return view('public/about',[
-        "title" => "About"
-    ]);
-});
+// Routes for admin access page
+Route::get('/admin/forum', [AdminController::class, 'forum']);
 
-Route::get('/login', function () {
-    return view('public/login',[
-        "title" => "Login"
-    ]);
-});
 
-Route::get('/register', function () {
-    return view('public/register',[
-        "title" => "Legister"
-    ]);
-});
 
+// Routes for User access Page
 Route::get('/course', function () {
     return view('user/course',[
         "title" => "Course"
