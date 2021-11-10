@@ -26,7 +26,7 @@ class PublicController extends Controller
 
     public function register(){
         return view('public/register',[
-            "title" => "Legister"
+            "title" => "Register"
         ]);
     }
 }

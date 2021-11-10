@@ -5,7 +5,10 @@
 @endsection
 
 @section('hero')
-
+  @foreach ($data as $course)
+      <h1>{{ $course['name'] }}</h1>
+      <p>{{ $course['mentor'] }}</p>
+  @endforeach
 @endsection
 
 @section('content')

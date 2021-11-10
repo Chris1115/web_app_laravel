@@ -12,5 +12,7 @@
           <a class="nav-link {{ ($title === "About") ? 'active' : '' }}" href="/about">About</a>
         </div>
       </div>
+      <a href="/register"><button class="btn btn-outline-primary" type="submit">Register</button></a>
+      <a href="/login"><button type="button" class="btn btn-primary m-3">Login</button></a>
     </div>
-  </nav>
+</nav>

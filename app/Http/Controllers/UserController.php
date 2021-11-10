@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Courses;
 
 class UserController extends Controller
 {
     public function course(){
         return view('user/course',[
-            "title" => "Course"
+            "title" => "Course",
+            "data" => Courses::getAll()
         ]);
     }
 
