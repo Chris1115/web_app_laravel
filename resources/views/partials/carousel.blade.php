@@ -6,21 +6,21 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="./images/1.jpg" class="d-block w-100" height="720" width="1080" alt="...">
+        <img src="{{ asset('images/1.jpg') }}" class="d-block w-100" height="720" width="1080" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Business Mentor</h5>
           <p>Some representative placeholder content for the first slide.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="./images/2.jpg" class="d-block w-100" height="720" width="1080" alt="...">
+        <img src="{{ asset('images/2.jpg') }}" class="d-block w-100" height="720" width="1080" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>IT Solution</h5>
           <p>Some representative placeholder content for the second slide.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="./images/3.jpg" class="d-block w-100" height="720" width="1080" alt="...">
+        <img src="{{ asset('images/3.jpg') }}" class="d-block w-100" height="720" width="1080" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Start-Up Incubation</h5>
           <p>Some representative placeholder content for the third slide.</p>

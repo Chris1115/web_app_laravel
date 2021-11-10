@@ -1,7 +1,7 @@
 @extends('layouts/user')
 
 @section('style')
-  <link href="./UI/css/user/course.css" rel="stylesheet" >
+  <link href="{{ asset('UI/css/user/course.css') }}" rel="stylesheet" >
 @endsection
 
 @section('hero')

@@ -1,13 +1,13 @@
 @extends('layouts/public')
 
 @section('style')
-  <link href="./UI/css/public/about.css" rel="stylesheet" >
+  <link href="{{ asset('UI/css/public/about.css') }}" rel="stylesheet" >
 @endsection
 
 @section('hero')
     <div class="row p-5" id="logo">
         <div class="col-4 offset-2" id="logo-frame">
-            <img src="./images/LOGO.png" height="540" width="540">
+            <img src="{{ asset('images/LOGO.png') }}" height="540" width="540">
         </div>
         <div class="col-4 p-5" id="logo-text">
             <p class="fs-4 align-middle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum repellat cupiditate dolore placeat quis harum non praesentium excepturi temporibus earum.</p>

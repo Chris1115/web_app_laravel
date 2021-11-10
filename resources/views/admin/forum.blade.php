@@ -1,7 +1,7 @@
 @extends('layouts/public')
 
 @section('style')
-  <link href="./UI/css/public/landing.css" rel="stylesheet" >
+  {{-- <link href="./UI/css/public/landing.css" rel="stylesheet" > --}}
 @endsection
 
 @section('hero')
