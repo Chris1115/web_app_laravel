@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Courses;
+use App\Models\Course;
+use App\Models\Forum;
+use App\Models\User;
 
 class UserController extends Controller
 {

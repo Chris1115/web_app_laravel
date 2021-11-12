@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Forum;
+use App\Models\Course;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,6 +14,13 @@ class AdminController extends Controller
         return view('admin/forum', [
             "title" => "Admin || Forum",
             "data" => Forum::getAll()
+        ]);
+    }
+
+    public function course(){
+        return view('admin/course', [
+            "title" => "Admin || course",
+            "data" => Course::getAll()
         ]);
     }
 

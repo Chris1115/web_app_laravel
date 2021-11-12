@@ -10,7 +10,15 @@ class Forum extends Model
 {
     // use HasFactory;
 
-    
+    protected $guarded = ['id'];
+
+    public static function add($title, $question){
+        Forum::create([
+            "title" => $title,
+            "question" => $question
+        ]);
+    }
+
     public static function getAll(){
         $forums = DB::table('forums')->get();
         return $forums;
