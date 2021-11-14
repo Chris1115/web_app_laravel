@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Forum;
@@ -12,7 +13,7 @@ class UserController extends Controller
     public function course(){
         return view('user/course',[
             "title" => "Course",
-            "data" => Courses::getAll()
+            "data" => Course::getAll()
         ]);
     }
 
@@ -32,5 +33,13 @@ class UserController extends Controller
         return view('user/news',[
             "title" => "News"
         ]);
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
     }
 }

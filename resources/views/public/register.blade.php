@@ -38,7 +38,7 @@
 
       {{-- username --}}
       <div class="form-floating">
-        <input type="text" name="username" class="form-control @error('name') is-invalid @enderror" id="username" placeholder="username">
+        <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" id="username" placeholder="username">
         <label for="username">Username</label>
         @error('username')
         <div class="invalid-feedback">
@@ -49,7 +49,7 @@
 
       {{-- email --}}
       <div class="form-floating">
-        <input type="email" name="email" class="form-control @error('name') is-invalid @enderror" id="email" placeholder="name@example.com">
+        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com">
         <label for="email">Email address</label>
         @error('email')
         <div class="invalid-feedback">
@@ -60,7 +60,7 @@
 
       {{-- password --}}
       <div class="form-floating">
-        <input type="password" name="password" class="form-control rounded-bottom @error('name') is-invalid @enderror" id="password" placeholder="Password">
+        <input type="password" name="password" class="form-control rounded-bottom @error('password') is-invalid @enderror" id="password" placeholder="Password">
         <label for="password">Password</label>
         @error('password')
         <div class="invalid-feedback">

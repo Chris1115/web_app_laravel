@@ -11,8 +11,41 @@
           <a class="nav-link {{ ($title === "BisnisCap") ? 'active' : '' }}"href="/">Home</a>
           <a class="nav-link {{ ($title === "About") ? 'active' : '' }}" href="/about">About</a>
         </div>
+        @auth
+          <a class="nav-link {{ ($title === "Course") ? 'active' : '' }}"href="/user/course">Courses</a>
+          <a class="nav-link {{ ($title === "News") ? 'active' : '' }}" href="/user/news">News</a>
+        @endauth
       </div>
-      <a href="/register"><button class="btn btn-outline-primary" type="submit">Register</button></a>
-      <a href="/login"><button type="button" class="btn btn-primary m-3">Login</button></a>
+
+      
+      @auth
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome back, {{ auth()->user()->name }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="/home">
+                <img src="{{ asset('icons/house.svg') }}" alt="Bootstrap" width="22" height="22"> Home
+              </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <form action="/logout" method="POST">
+                @csrf
+                <button type="submit" class="dropdown-item">
+                  <img src="{{ asset('icons/box-arrow-right.svg') }}" alt="Bootstrap" width="22" height="22"></i> Logout
+                </button>
+              </form>
+            </li>
+          </ul>
+        </li>
+      </ul>
+        @else
+          <a href="/register"><button class="btn btn-outline-primary">Register</button></a>
+          <a href="/login"><button class="btn btn-primary m-3">Login</button></a>
+        @endauth
+
     </div>
 </nav>

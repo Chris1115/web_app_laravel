@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 class PublicController extends Controller
@@ -42,10 +43,30 @@ class PublicController extends Controller
 
         $validated['password'] = Hash::make($validated['password']);
 
-        User::create($valdated);
+        User::create($validated);
 
-        $request->session()->flash('success', 'Registration successfull! Please Login');
+        return redirect('/login')->with('success', 'Registration successfull! Please Login');
+    }
 
-        return redirect('/login');
+    public function user_login(Request $request){
+        $credentials = $request->validate([
+            'username' => 'required',
+            'password' => 'required'
+        ]);
+
+        if(Auth::attempt($credentials)){
+            $request->session()->regenerate();
+
+            if(Auth::user()->name == 'admin')
+            {
+                return redirect()->intended('/admin');
+            }
+            else
+            {
+                return redirect()->intended('/home');
+            }
+        }
+
+        return back()->with('loginError', 'Login Failed :(');
     }
 }

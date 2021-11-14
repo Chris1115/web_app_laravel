@@ -22,6 +22,8 @@
     <div class="container mt-4" id="content">
         @yield('content')
     </div>
+
+    @include('partials.footer')
     
 
     <script src="{{ asset('UI/js/bootstrap.bundle.min.js') }}" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

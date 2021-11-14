@@ -27,17 +27,33 @@
         {{ session('success') }}
       </div>
     @endif
+    @if(session()->has('loginError'))
+      <div class="alert alert-danger" role="alert">
+        {{ session('loginError') }}
+      </div>
+    @endif
 
-    <form>
+    <form action="/login" method="POST">
+      @csrf
       <h1 class="h3 mb-3 fw-normal text-center pt-5 pb-3">Login Here</h1>
 
       <div class="form-floating">
-        <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
-        <label for="email">Email address</label>
+        <input type="username" name="username" class="form-control" @error('username') is-invalid @enderror id="username" placeholder="name@example.com" autofocus required value="{{ old('email') }}">
+        <label for="username">Username</label>
+        @error('email')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>            
+        @enderror
       </div>
       <div class="form-floating">
-        <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+        <input type="password" name="password" class="form-control" @error('password') is-invalid @enderror id="password" placeholder="Password" required>
         <label for="password">Password</label>
+        @error('password')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>            
+        @enderror
       </div>
 
       {{-- <div class="checkbox mb-3">

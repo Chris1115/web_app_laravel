@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
+    public function dashboard(){
+        return view('admin/dashboard', [
+            "title" => "Admin || Dashboard"
+        ]);
+    }
+
     public function forum(){
         return view('admin/forum', [
             "title" => "Admin || Forum",
@@ -21,6 +27,13 @@ class AdminController extends Controller
         return view('admin/course', [
             "title" => "Admin || course",
             "data" => Course::getAll()
+        ]);
+    }
+
+    public function account(){
+        return view('admin/account', [
+            "title" => "Admin || course",
+            "data" => User::getAll()
         ]);
     }
 
