@@ -21,6 +21,7 @@ Route::get('/', [PublicController::class, 'index']);
 Route::get('/about', [PublicController::class, 'about']);
 Route::get('/login', [PublicController::class, 'login']);
 Route::get('/register', [PublicController::class, 'register']);
+Route::post('/register', [PublicController::class, 'addUser']);
 
 
 // Routes for admin access page
