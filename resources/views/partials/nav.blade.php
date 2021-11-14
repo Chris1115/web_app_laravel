@@ -8,11 +8,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link {{ ($title === "BisnisCap") ? 'active' : '' }}"href="/">Home</a>
+          <a class="nav-link {{ ($title === "BisnisCap") ? 'active' : '' }}" href="/">Home</a>
           <a class="nav-link {{ ($title === "About") ? 'active' : '' }}" href="/about">About</a>
         </div>
         @auth
-          <a class="nav-link {{ ($title === "Course") ? 'active' : '' }}"href="/user/course">Courses</a>
+          <a class="nav-link {{ ($title === "Course") ? 'active' : '' }}" href="/user/course">Courses</a>
           <a class="nav-link {{ ($title === "News") ? 'active' : '' }}" href="/user/news">News</a>
         @endauth
       </div>
