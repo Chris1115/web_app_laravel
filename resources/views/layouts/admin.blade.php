@@ -16,11 +16,11 @@
     @include('partials.nav')
 
     <div class="row">
-      <div class="col">
+      <div class="col-2">
         @include('partials.sidebars')
       </div>
-      <div class="col">
-        <h1 class="display1">DISINI KONTEN</h1>
+      <div class="col-10" style="background-color: whitesmoke">
+        @yield('content')
       </div>
     </div>
 

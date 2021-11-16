@@ -21,17 +21,29 @@ Route::get('/', [PublicController::class, 'index']);
 Route::get('/about', [PublicController::class, 'about']);
 Route::get('/login', [PublicController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [PublicController::class, 'user_login'])->middleware('guest');
-Route::post('/logout', [UserController::class, 'logout']);
+Route::get('/logout', [UserController::class, 'logout']);
 Route::get('/register', [PublicController::class, 'register'])->middleware('guest');
 Route::post('/register', [PublicController::class, 'addUser'])->middleware('guest');
 
 
 // Routes for admin access page
 Route::get('/admin', [AdminController::class, 'dashboard'])->middleware('auth');
+
 Route::get('/admin/forum', [AdminController::class, 'forum'])->middleware('auth');
-Route::get('/admin/user', [AdminController::class, 'user'])->middleware('auth');
+Route::get('/admin/forum/edit/{id}', [AdminController::class, 'forum'])->middleware('auth');
+Route::get('/admin/forum/delete/{id}', [AdminController::class, 'forum'])->middleware('auth');
+
+Route::get('/admin/news', [AdminController::class, 'news'])->middleware('auth');
+Route::get('/admin/news/edit/{id}', [AdminController::class, 'news'])->middleware('auth');
+Route::get('/admin/news/delete/{id}', [AdminController::class, 'news'])->middleware('auth');
+
 Route::get('/admin/course', [AdminController::class, 'course'])->middleware('auth');
+Route::get('/admin/course/edit/{id}', [AdminController::class, 'course'])->middleware('auth');
+Route::get('/admin/course/delete/{id}', [AdminController::class, 'course'])->middleware('auth');
+
 Route::get('/admin/account', [AdminController::class, 'account'])->middleware('auth');
+Route::get('/admin/account/edit/{id}', [AdminController::class, 'edit'])->middleware('auth');
+Route::get('/admin/account/delete/{id}', [AdminController::class, 'deleteUser'])->middleware('auth');
 
 
 
