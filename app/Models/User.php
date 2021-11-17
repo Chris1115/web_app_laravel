@@ -43,4 +43,8 @@ class User extends Authenticatable
         $accounts = DB::table('users')->get();
         return $accounts;
     }
+
+    public static function deleteById($id){
+        DB::table('users')->where('id', $id)->delete();
+    }
 }

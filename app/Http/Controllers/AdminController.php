@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Forum;
 use App\Models\Course;
 use App\Models\User;
+use App\Models\news;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,6 +17,7 @@ class AdminController extends Controller
         ]);
     }
 
+    
     public function forum(){
         return view('admin/forum', [
             "title" => "Admin || Forum",
@@ -30,15 +32,42 @@ class AdminController extends Controller
         ]);
     }
 
-    //Account Menu  
+      
     public function account(){
         return view('admin/account', [
             "title" => "Admin || Accounts",
             "data" => User::getAll()
         ]);
     }
-    public function deleteUser($id){
-        DB::table('users')->where('id', $id)->delete();
-        return redirect('/admin/account');
+
+    public function edit($table, $id)
+    {
+        
+    }
+    public function delete($table, $id)
+    {
+        switch ($table) {
+            case 'account':
+                User::deleteById($id);
+                break;
+    
+            case 'forum':
+                Forum::deleteById($id);
+                break;
+                
+            case 'news':
+                news::deleteById($id);
+                break;
+                
+            case 'course':
+                Course::deleteById($id);
+                break;
+                
+            default:
+                # code...
+                break;
+        }
+
+        return redirect('/admin/'.$table);
     }
 }

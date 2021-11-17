@@ -27,4 +27,8 @@ class Course extends Model
         $course = DB::table('courses')->get();
         return $course;
     }
+
+    public static function deleteById($id){
+        DB::table('courses')->where('id', $id)->delete();
+    }
 }

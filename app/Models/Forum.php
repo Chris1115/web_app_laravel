@@ -23,4 +23,8 @@ class Forum extends Model
         $forums = DB::table('forums')->get();
         return $forums;
     }
+
+    public static function deleteById($id){
+        DB::table('forums')->where('id', $id)->delete();
+    }
 }

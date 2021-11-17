@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class news extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    public static function deleteById($id){
+        DB::table('news')->where('id', $id)->delete();
+    }
 }
