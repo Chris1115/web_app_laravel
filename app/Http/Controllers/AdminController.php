@@ -40,10 +40,15 @@ class AdminController extends Controller
         ]);
     }
 
+    public function newCourse(){
+
+    }
+
     public function edit($table, $id)
     {
         
     }
+    
     public function delete($table, $id)
     {
         switch ($table) {

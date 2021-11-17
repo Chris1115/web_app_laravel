@@ -14,6 +14,8 @@
           @if (auth()->user()->name === 'admin')
             <a class="nav-link {{ ($title === "Course") ? 'active' : '' }}" href="/admin/course">Courses</a>
             <a class="nav-link {{ ($title === "News") ? 'active' : '' }}" href="/admin/news">News</a>
+            <a class="nav-link {{ ($title === "News") ? 'active' : '' }}" href="/admin/forum">Forums</a>
+            <a class="nav-link {{ ($title === "News") ? 'active' : '' }}" href="/admin/account">Accounts</a>
           @else
             <a class="nav-link {{ ($title === "Course") ? 'active' : '' }}" href="/user/course">Courses</a>
             <a class="nav-link {{ ($title === "News") ? 'active' : '' }}" href="/user/news">News</a> 

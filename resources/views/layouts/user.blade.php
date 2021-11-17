@@ -12,18 +12,20 @@
     <title>{{ $title }}</title>
   </head>
   <body>
-
-    @include('partials.nav')
     
-    <div class="container-fluid" id="hero">
-        @yield('hero')
-    </div>
+    @include('partials.nav')
 
-    <div class="container mt-4" id="content">
+    <div class="row">
+      <div class="col-2">
+        @include('partials.sidebars')
+      </div>
+      <div class="col-10" style="background-color: whitesmoke">
         @yield('content')
+      </div>
     </div>
 
     @include('partials.footer')
+
     
 
     <script src="{{ asset('UI/js/bootstrap.bundle.min.js') }}" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
