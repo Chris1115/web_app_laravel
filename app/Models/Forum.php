@@ -11,6 +11,8 @@ class Forum extends Model
     // use HasFactory;
 
     protected $guarded = ['id'];
+    protected $primaryKey = 'id';
+
 
     public static function add($title, $question){
         Forum::create([
@@ -24,7 +26,17 @@ class Forum extends Model
         return $forums;
     }
 
+    public static function getById($id){
+        $forum = DB::table('forums')->where('id', $id)->get();
+
+        return $forum;
+    }
+
     public static function deleteById($id){
         DB::table('forums')->where('id', $id)->delete();
+    }
+
+    public function forum_chats(){
+        return $this->hasMany(forum_chat::class);
     }
 }

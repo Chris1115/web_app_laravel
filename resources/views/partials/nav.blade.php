@@ -9,18 +9,19 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link {{ ($title === "BisnisCap") ? 'active' : '' }}" href="/">Home</a>
-          <a class="nav-link {{ ($title === "About") ? 'active' : '' }}" href="/about">About</a>
+            <a class="nav-link {{ ($title === "About") ? 'active' : '' }}" href="/about">About</a>
           @auth
           @if (auth()->user()->name === 'admin')
+            <a class="nav-link {{ ($title === "BisnisCap") ? 'active' : '' }}" href="/admin/dashboard">Dashboard</a>
             <a class="nav-link {{ ($title === "Course") ? 'active' : '' }}" href="/admin/course">Courses</a>
             <a class="nav-link {{ ($title === "News") ? 'active' : '' }}" href="/admin/news">News</a>
-            <a class="nav-link {{ ($title === "News") ? 'active' : '' }}" href="/admin/forum">Forums</a>
-            <a class="nav-link {{ ($title === "News") ? 'active' : '' }}" href="/admin/account">Accounts</a>
+            <a class="nav-link {{ ($title === "Forums") ? 'active' : '' }}" href="/admin/forum">Forums</a>
+            <a class="nav-link {{ ($title === "Accounts") ? 'active' : '' }}" href="/admin/account">Accounts</a>
           @else
+            <a class="nav-link {{ ($title === "Dashboard") ? 'active' : '' }}" href="/home">Dashboard</a>
             <a class="nav-link {{ ($title === "Course") ? 'active' : '' }}" href="/user/course">Courses</a>
             <a class="nav-link {{ ($title === "News") ? 'active' : '' }}" href="/user/news">News</a>
-            <a class="nav-link {{ ($title === "News") ? 'active' : '' }}" href="/user/forum">Forums</a>
-            <a class="nav-link {{ ($title === "News") ? 'active' : '' }}" href="/user/account">Accounts</a>
+            <a class="nav-link {{ ($title === "Forums") ? 'active' : '' }}" href="/user/forum">Forums</a>
           @endif
           @endauth
         </div>

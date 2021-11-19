@@ -27,24 +27,19 @@ Route::post('/register', [PublicController::class, 'addUser'])->middleware('gues
 
 
 // Routes for admin access page
-Route::get('/admin', [AdminController::class, 'dashboard'])->middleware('auth');
-
-Route::get('/admin/forum', [AdminController::class, 'forum'])->middleware('auth');
-
-Route::get('/admin/news', [AdminController::class, 'news'])->middleware('auth');
-
-Route::get('/admin/course', [AdminController::class, 'course'])->middleware('auth');
-
-Route::get('/admin/account', [AdminController::class, 'account'])->middleware('auth');
+Route::get('/admin/{page}', [AdminController::class, 'display'])->middleware('auth');
 
 Route::get('/admin/{table}/delete/{id}', [AdminController::class, 'delete'])->middleware('auth');
 Route::get('/admin/{table}/edit/{id}', [AdminController::class, 'edit'])->middleware('auth');
-Route::post('/admin/{table}/add/{id}', [AdminController::class, 'manipulate'])->middleware('auth');
+
+Route::post('/admin/course/add', [AdminController::class, 'Add'])->middleware('auth');
+Route::post('/admin/news/add', [AdminController::class, 'Add'])->middleware('auth');
+Route::post('/admin/forum/add', [AdminController::class, 'Add'])->middleware('auth');
+Route::get('/admin/{table}/add', [AdminController::class, 'createRoutes'])->middleware('auth');
 
 
 
 // Routes for User access Page
-Route::get('/course', [UserController::class, 'course'])->middleware('auth');
-Route::get('/forum', [UserController::class, 'forum'])->middleware('auth');
-Route::get('/home', [UserController::class, 'home'])->middleware('auth');
-Route::get('/news', [UserController::class, 'news'])->middleware('auth');
+Route::get('/user/{page}', [UserController::class, 'display'])->middleware('auth');
+Route::get('/user/forum/{id}', [UserController::class, 'forumdtl'])->middleware('auth');
+Route::post('/user/addChat', [UserController::class, 'addChat'])->middleware('auth');

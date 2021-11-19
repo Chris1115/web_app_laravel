@@ -59,11 +59,11 @@ class PublicController extends Controller
 
             if(Auth::user()->name == 'admin')
             {
-                return redirect()->intended('/admin');
+                return redirect()->intended('/admin/dashboard');
             }
             else
             {
-                return redirect()->intended('/home');
+                return redirect()->intended('/user/home');
             }
         }
 
