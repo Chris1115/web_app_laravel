@@ -1,56 +1,32 @@
-@extends('layouts/public')
+@extends('layouts/user')
 @section('style')
 <link href="{{ asset('UI/css/public/carousel.css') }}" rel="stylesheet" >
 <link href="{{ asset('UI/css/public/carousel.css') }}" rel="stylesheet" >
-@endsection
-
-@section('hero')
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>Carousel Template · Bootstrap v5.1</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
-
-    
-
-    <!-- Bootstrap core CSS -->
+<link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
+<link href="carousel.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+</style>
+@endsection
 
-    
+@section('content')
     <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
-  </head>
   <body>
-    {{-- <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div> --}}
 <main>
 
     <div class="row">
@@ -70,6 +46,5 @@
 
       
   </body>
-</html>
 
 @endsection
