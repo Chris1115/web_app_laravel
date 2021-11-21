@@ -27,7 +27,7 @@ class Forum extends Model
     }
 
     public static function getById($id){
-        $forum = DB::table('forums')->where('id', $id)->get();
+        $forum = DB::table('forums')->where('id', $id)->first();
 
         return $forum;
     }

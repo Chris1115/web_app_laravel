@@ -26,11 +26,12 @@ class forum_chat extends Model
         return $forum_chat;
     }
 
-    public static function getAllCertain($id){
+    public static function getComments($id){
         $chat = DB::table('forum_chats')
             ->join('forums', 'forum_chats.forums_id', '=', 'forums.id')
             ->join('users', 'forum_chats.users_id', '=', 'users.id')
             ->select('*')
+            ->where('forums.id', $id)
             ->get();
 
         return $chat;

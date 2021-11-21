@@ -46,7 +46,8 @@ class UserController extends Controller
     public function forumdtl($id){
         return view('user/forumdtl', [
             "title" => "Admin || Forum Details",
-            "response" => forum_chat::getAllCertain($id)
+            "response" => forum_chat::getComments($id),
+            "forum" => Forum::getById($id)
         ]);
     }
 

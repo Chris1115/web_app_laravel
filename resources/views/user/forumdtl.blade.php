@@ -5,12 +5,22 @@
 @endsection
 
 @section('content')
-{{-- <form action="/user/addChat" method="post">
-  @csrf
-  <input type="hidden" name="forum_id" value="{{ $response->forums_id }}">
-  <input type="hidden" name="user_id" value="{{ $response->users_id }}">
-  <input type="text" name="comment">
-  <button type="submit">add comment</button>
-</form> --}}
-@dump($response)
+<div class="card px-4 py-5">
+  <div class="card-body">
+      <h2 class="card-title">{{ $forum->title }}</h2>
+      <p class="card-text">{{ $forum->question }}</p>
+      <hr size="5" color="#fff">
+      <div class="row">
+        @foreach ($response as $comments)
+          <div class="col mx-3">
+            <p><strong>{{ $comments->name }}</strong></p>
+            <p>{{ $comments->response }}</p>
+          </div>
+          <hr>
+        @endforeach
+      </div>
+      <a href="/user/forum"><button class="btn btn-primary">back to forum</button></a>
+  </div>
+</div>
+@dump($response, $forum, auth()->user())
 @endsection
