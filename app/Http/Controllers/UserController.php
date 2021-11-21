@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\Forum;
 use App\Models\User;
 use App\Models\forum_chat;
+use App\Models\news;
 use App\Models\news_comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,7 +35,7 @@ class UserController extends Controller
             case 'news':
                 return view('user/news',[
                     "title" => "News",
-                    "data" => Forum::getAll()
+                    "data" => news::getAll()
                 ]);
             
             default:
