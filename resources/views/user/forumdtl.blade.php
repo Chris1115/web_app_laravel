@@ -18,8 +18,18 @@
           </div>
           <hr>
         @endforeach
+        <div class="col mx-3">
+          <form action="/user/addChat" method="POST">
+            @csrf
+            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+            <input type="hidden" name="forum_id" value="{{ $forum->id }}">
+            <label for="comment">{{ auth()->user()->name }}</label>
+            <input type="text" name="comment" placeholder="input your comments here">
+            <button type="submit" class="btn btn-primary">add comment</button>
+        </form>
+        </div>
       </div>
-      <a href="/user/forum"><button class="btn btn-primary">back to forum</button></a>
+      <a href="/user/forum"><button class="btn btn-outline-primary">back to forum</button></a>
   </div>
 </div>
 @dump($response, $forum, auth()->user())

@@ -53,9 +53,8 @@ class UserController extends Controller
     }
 
     public function addChat(Request $request){
-        // forum_chat::add($user_id, $forum_id, $chat);
-        // return redirect('/user/forum/'.$forum_id);
-        return $request->all();
+        forum_chat::add($request->user_id, $request->forum_id, $request->comment);
+        return redirect('/user/forum/'.$request->forum_id);
     }
 
     public function logout(Request $request){
