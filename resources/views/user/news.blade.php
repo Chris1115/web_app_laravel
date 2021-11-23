@@ -37,7 +37,7 @@
         <div class="card-body">
             <h2 class="card-title">{{ $news->headline }}</h2>
             <p class="card-text">{{ $news->content }}</p>
-            <a href="/user/forum/{{ $news->id }}"><button class="btn btn-primary">see details</button></a>
+            <a href="/user/news/{{ $news->id }}"><button class="btn btn-primary">see details</button></a>
         </div>
       </div>
       </div>
