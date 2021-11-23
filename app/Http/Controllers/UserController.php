@@ -52,9 +52,22 @@ class UserController extends Controller
         ]);
     }
 
+    public function newsdtl($id){
+        return view('user/newsdtl', [
+            "title" => "News || Detail",
+            "comment" => news_comment::getComments($id),
+            "news" => news::getById($id)
+        ]);
+    }
+
     public function addChat(Request $request){
         forum_chat::add($request->user_id, $request->forum_id, $request->comment);
         return redirect('/user/forum/'.$request->forum_id);
+    }
+
+    public function addComment(Request $request){
+        news_comment::add($request->user_id, $request->news_id, $request->comments);
+        return redirect('/user/news/'.$request->news_id);
     }
 
     public function logout(Request $request){
