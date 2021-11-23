@@ -43,3 +43,5 @@ Route::get('/admin/{table}/add', [AdminController::class, 'createRoutes'])->midd
 Route::get('/user/{page}', [UserController::class, 'display'])->middleware('auth');
 Route::get('/user/forum/{id}', [UserController::class, 'forumdtl'])->middleware('auth');
 Route::post('/user/addChat', [UserController::class, 'addChat'])->middleware('auth');
+Route::post('/user/addComment', [UserController::class, 'addcomment'])->middleware('auth');
+Route::get('/user/news/{id}', [UserController::class, 'newsdtl'])->middleware('auth');
