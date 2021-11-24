@@ -1,5 +1,4 @@
 <?php
-admin nih
 namespace App\Http\Controllers;
 
 use App\Models\Forum;
