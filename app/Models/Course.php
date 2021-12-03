@@ -27,6 +27,12 @@ class Course extends Model
         DB::table('courses')->where('id', $id)->delete();
     }
 
+    public static function getById($id){
+        $course = DB::table('courses')->where('id', $id)->first();
+
+        return $course;
+    }
+
     public function classes(){
         return $this->hasMany(classes::class);
     }

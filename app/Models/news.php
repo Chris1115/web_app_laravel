@@ -24,6 +24,12 @@ class news extends Model
         return $news;
     }
 
+    public static function getById($id){
+        $news = DB::table('news')->where('id', $id)->first();
+
+        return $news;
+    }
+
     public static function deleteById($id){
         DB::table('news')->where('id', $id)->delete();
     }
