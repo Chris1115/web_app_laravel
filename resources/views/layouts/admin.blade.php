@@ -13,7 +13,7 @@
   </head>
   <body>
     
-    @include('partials.nav')
+    @include('partials.navaftlogin')
 
     <div class="row">
       <div class="col-2">

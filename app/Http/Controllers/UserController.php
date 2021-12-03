@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Course;
@@ -23,7 +24,7 @@ class UserController extends Controller
             case 'forum':
                 return view('user/forum',[
                     "title" => "Forum",
-                    "data" => Forum::getAll(),
+                    "data" => Forum::getAll()
                 ]);
                 
             case 'home':
@@ -45,7 +46,7 @@ class UserController extends Controller
     
     public function forumdtl($id){
         return view('user/forumdtl', [
-            "title" => "Admin || Forum Details",
+            "title" => "User || Forum Details",
             "response" => forum_chat::getComments($id),
             "forum" => Forum::getById($id)
         ]);
@@ -56,6 +57,14 @@ class UserController extends Controller
             "title" => "News || Detail",
             "comment" => news_comment::getComments($id),
             "news" => news::getById($id)
+        ]);
+    }
+// course detail sementara.... masih mau nambah
+// database kusus detail dari course kayak spec coursenya sub judul dll
+    public function coursedtl($id){
+        return view('user/coursedtl', [
+            "title" => " User || Course Details",
+            "course" => course::getById($id)
         ]);
     }
 

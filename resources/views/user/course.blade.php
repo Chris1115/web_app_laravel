@@ -13,7 +13,7 @@
         <h3 class="card-title">{{ $course->name }}</h3>
         <p class="card-text">{{ $course->description }}</p>
         <a href="#" class="card-link">Register Class</a>
-        <a href="#" class="card-link">More details</a>
+        <a href="/user/course/{{ $course->id }}" class="card-link">More details</a>
       </div>
     </div>
   </div>
