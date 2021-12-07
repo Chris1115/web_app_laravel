@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\User;
 use App\Models\Course;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class classes extends Model
@@ -14,7 +15,7 @@ class classes extends Model
 
     public static function add($user_id, $course_id){
         Course::create([
-            "users_id" => $users_id,
+            "users_id" => $user_id,
             "courses_id" => $course_id
         ]);
     }
