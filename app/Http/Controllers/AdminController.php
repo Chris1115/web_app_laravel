@@ -3,8 +3,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Forum;
 use App\Models\Course;
+use App\Models\news_comment;
 use App\Models\User;
 use App\Models\news;
+use App\Models\takenclass;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -40,6 +42,12 @@ class AdminController extends Controller
                     "title" => "Admin || Accounts",
                     "data" => User::getAll()
                 ]);
+
+                case 'class':
+                    return view('admin/class', [
+                        "title" => "Admin || Class",
+                        "data" => takenclass::getAll()
+                    ]);
 
             case 'create':
                 return view('admin/create', [
@@ -91,6 +99,10 @@ class AdminController extends Controller
             case 'news':
                 news::deleteById($id);
                 break;
+
+            case 'class':
+                takenclass::deleteById($id);
+                break;
                 
             case 'course':
                 Course::deleteById($id);
@@ -129,5 +141,26 @@ class AdminController extends Controller
     public function edit($table, $id)
     {
         
+    }
+    public function viewcomments($id){
+        return view('admin/newsdtl', [
+            "title" => "Admin || News Comments",
+            "commen" => news_comment::getById($id),
+            "news" => news::getById($id)
+        ]);
+    }
+    public function deletes($table,$ids, $id)
+    {
+        switch ($table) {
+            case 'news':
+                news_comment::deleteById($id);
+                break;
+                
+            default:
+                # code...
+                break;
+        }
+
+        return redirect('/admin/'.$table.'/view/'.$ids);
     }
 }

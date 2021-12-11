@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\classdtl;
+use App\Models\classes; 
 use App\Models\Course;
 use App\Models\Forum;
 use App\Models\User;
 use App\Models\forum_chat;
 use App\Models\news;
 use App\Models\news_comment;
+use App\Models\takenclass;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -59,8 +62,22 @@ class UserController extends Controller
             "news" => news::getById($id)
         ]);
     }
-// course detail sementara.... masih mau nambah
-// database kusus detail dari course kayak spec coursenya sub judul dll
+
+    public function myclass($id){
+        return view('user/myclass', [
+            "title" => "User || MyClass",
+            "classdtl" => takenclass::getById($id),
+            "classy" => takenclass::getAll()
+        ]);
+    }
+
+    public function class($id){
+        return view('user/class', [
+            "title" => "User || Class",
+            "classdtl" => classes::getById($id),
+            "class" => course::getById($id)
+        ]);
+    }
     public function coursedtl($id){
         return view('user/coursedtl', [
             "title" => " User || Course Details",
@@ -76,6 +93,11 @@ class UserController extends Controller
     public function addComment(Request $request){
         news_comment::add($request->user_id, $request->news_id, $request->comments);
         return redirect('/user/news/'.$request->news_id);
+    }
+
+    public function addClass(Request $request){
+        takenclass::add( $request->course_id,$request->username, $request->name, $request->mentor, $request->schedule);
+        return redirect('/user/course');
     }
 
     public function logout(Request $request){
