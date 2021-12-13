@@ -15,7 +15,6 @@
       <th scope="col">Mentor</th>
       <th scope="col">Schedule</th>
       <th scope="col"></th>
-      <th scope="col"></th>
     </tr>
   </thead>
   @foreach ($data as $account)
@@ -27,7 +26,6 @@
         <th scope="col">{{ $account->name }}</th>
         <th scope="col">{{ $account->mentor }}</th>
         <th scope="col">{{ $account->schedule }}</th>
-        <th scope="col"><a href="/admin/class/edit/{{ $account->id }}">Edit</a></th>
         <th scope="col"><a href="/admin/class/delete/{{ $account->id }}">Delete</a></th>
       </tr>
     </tbody>

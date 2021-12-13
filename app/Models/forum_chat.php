@@ -41,6 +41,10 @@ class forum_chat extends Model
         DB::table('forums_chats')->where('id', $id)->delete();
     }
 
+    public static function deleteAllByForumId($id){
+        DB::table('forum_chats')->where('forums_id', $id)->delete();
+    }
+
     public function users(){
         return $this->belongsTo(User::class);
     }

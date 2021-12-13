@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Forum;
+use App\Models\forum_chat;
 use App\Models\Course;
 use App\Models\news_comment;
 use App\Models\User;
@@ -93,10 +94,12 @@ class AdminController extends Controller
                 break;
     
             case 'forum':
+                forum_chat::deleteAllByForumId($id);
                 Forum::deleteById($id);
                 break;
                 
             case 'news':
+                news_comment::deleteAllByNewsId($id);
                 news::deleteById($id);
                 break;
 
@@ -138,29 +141,11 @@ class AdminController extends Controller
         return redirect('/admin/'.$request['table']);
     }
 
-    public function edit($table, $id)
-    {
-        
-    }
     public function viewcomments($id){
         return view('admin/newsdtl', [
             "title" => "Admin || News Comments",
             "commen" => news_comment::getById($id),
             "news" => news::getById($id)
         ]);
-    }
-    public function deletes($table,$ids, $id)
-    {
-        switch ($table) {
-            case 'news':
-                news_comment::deleteById($id);
-                break;
-                
-            default:
-                # code...
-                break;
-        }
-
-        return redirect('/admin/'.$table.'/view/'.$ids);
     }
 }

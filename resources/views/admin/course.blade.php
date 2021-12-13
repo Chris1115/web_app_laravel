@@ -12,7 +12,6 @@
       <th scope="col">Name</th>
       <th scope="col">Description</th>
       <th scope="col"></th>
-      <th scope="col"></th>
     </tr>
   </thead>
   @foreach ($data as $course)
@@ -21,7 +20,6 @@
         <th scope="row">{{ $course->id }}</th>
         <th scope="col">{{ $course->name }}</th>
         <th scope="col">{{ $course->description }}</th>
-        <th scope="col"><a href="/admin/course/edit/{{ $course->id }}">Edit</a></th>
         <th scope="col"><a href="/admin/course/delete/{{ $course->id }}">Delete</a></th>
       </tr>
     </tbody>

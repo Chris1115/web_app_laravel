@@ -41,6 +41,10 @@ class news_comment extends Model
         DB::table('news_comments')->where('id', $id)->delete();
     }
 
+    public static function deleteAllByNewsId($id){
+        DB::table('news_comments')->where('news_id', $id)->delete();
+    }
+
     public function users(){
         return $this->belongsTo(User::class);
     }

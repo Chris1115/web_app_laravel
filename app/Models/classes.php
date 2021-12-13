@@ -4,8 +4,9 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Course;
-use Illuminate\Database\Eloquent\Model;
+use CreateTakenclassTable;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class classes extends Model
@@ -14,19 +15,26 @@ class classes extends Model
     protected $guarded = ['id'];
 
     public static function add($user_id, $course_id){
-        Course::create([
-            "users_id" => $user_id,
+        course::create([
+            "id" => $user_id,
             "courses_id" => $course_id
         ]);
     }
-
     public static function getAll(){
-        $course = DB::table('courses')->get();
-        return $course;
+        $class = DB::table('classes')->get();
+        return $class;
     }
 
+    
+    public static function getById($id){
+        $class = DB::table('classes')->where('course_id', $id)->get();
+
+        return $class;
+    }
+
+
     public static function deleteById($id){
-        DB::table('courses')->where('id', $id)->delete();
+        DB::table('classes')->where('id', $id)->delete();
     }
 
     public function User(){

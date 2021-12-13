@@ -12,7 +12,6 @@
       <th scope="col">Title</th>
       <th scope="col">Question</th>
       <th scope="col"></th>
-      <th scope="col"></th>
     </tr>
   </thead>
   @foreach ($data as $forum)
@@ -21,7 +20,6 @@
         <th scope="row">{{ $forum->id }}</th>
         <th scope="col">{{ $forum->title }}</th>
         <th scope="col">{{ $forum->question }}</th>
-        <th scope="col"><a href="/admin/forum/edit/{{ $forum->id }}">Edit</a></th>
         <th scope="col"><a href="/admin/forum/delete/{{ $forum->id }}">Delete</a></th>
       </tr>
     </tbody>
