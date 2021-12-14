@@ -11,13 +11,11 @@ class takenclass extends Model
     // use HasFactory;
     protected $guarded = ['id'];
 
-    public static function add( $course_id, $uname, $name, $mentor, $schedule){
+    public static function add( $users_id, $course_id,$class_id){
         takenclass::create([
+            "users_id" => $users_id,
             "course_id" => $course_id,
-            "username" => $uname,
-            "name" => $name,
-            "mentor" => $mentor,
-            "schedule" => $schedule,
+            "class_id" => $class_id,
         ]);
     }
 
@@ -35,6 +33,18 @@ class takenclass extends Model
 
     public static function deleteById($id){
         DB::table('takenclasses')->where('id', $id)->delete();
+    }
+
+    public static function getByclass($id){
+        $comments = DB::table('takenclasses')
+            ->join('users', 'takenclasses.users_id', '=', 'users.id')
+            ->join('classes', 'takenclasses.class_id', '=', 'classes.id')
+            ->join('courses', 'takenclasses.course_id', '=', 'courses.id')
+            ->select('*')
+            ->where('users_id', $id)
+            ->get();
+
+        return $comments;
     }
 
     public function User(){

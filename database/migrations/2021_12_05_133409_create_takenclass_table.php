@@ -15,11 +15,9 @@ class CreateTakenclassTable extends Migration
     {
         Schema::create('takenclasses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('users_id');
             $table->foreignId('course_id');
-            $table->string('username');
-            $table->string('name');
-            $table->string('mentor');
-            $table->string('schedule');
+            $table->string('class_id');
             $table->timestamps();
         });
     }

@@ -17,13 +17,11 @@
       <tr>
         <form action="/user/addClass" method="POST">
             @csrf
+        <input type="hidden" name="users_id" value="{{ auth()->user()->id }}">
         <input type="hidden" name="course_id" value="{{ $item->course_id }}">
-        <input type="hidden" name="username" value="{{ auth()->user()->username }}">
-        <input type="hidden" name="name" value="{{ $item->name }}">
-        <input type="hidden" name="mentor" value="{{ $item->mentor }}">
-        <input type="hidden" name="schedule" value="{{ $item->schedule }}">
+        <input type="hidden" name="class_id" value="{{ $item->id }}">
         <th>{{ $item->id }}</th>
-        <td>{{ $item->name }}</td>
+        <td>{{ $item->names }}</td>
         <td>{{ $item->mentor }}</td>
         <td >{{ $item->schedule }}</td>
       </tr>

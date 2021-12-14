@@ -6,27 +6,26 @@
 
 @section('content')
 <table class="table table-hover">
-  <thead>
+  <thead style="text-align: center">
     <tr style="background-color: whitesmoke">
-      <th scope="col">#</th>
-      <th scope="col">Course_id</th>
-      <th scope="col">Username</th>
-      <th scope="col">Course</th>
-      <th scope="col">Mentor</th>
-      <th scope="col">Schedule</th>
-      <th scope="col"></th>
+      <th scope="col">ID</th>
+      <th scope="col">Users_ID</th>
+      <th scope="col">Course_ID</th>
+      <th scope="col">Class_ID</th>
+      <th colspan="3">Action</th>
     </tr>
   </thead>
-  @foreach ($data as $account)
+  @foreach ($data as $datas)
     <tbody>
       <tr style="background-color: white">
-        <th scope="row">{{ $account->id }}</th>
-        <th scope="col">{{ $account->course_id }}</th>
-        <th scope="col">{{ $account->username }}</th>
-        <th scope="col">{{ $account->name }}</th>
-        <th scope="col">{{ $account->mentor }}</th>
-        <th scope="col">{{ $account->schedule }}</th>
-        <th scope="col"><a href="/admin/class/delete/{{ $account->id }}">Delete</a></th>
+        <th scope="row">{{ $datas->id }}</th>
+        <th scope="row">{{ $datas->course_id }}</th>
+        <th scope="row">{{ $datas->mentor }}</th>
+        <th scope="row">{{ $datas->schedule }}</th>
+        <th scope="col"><a href="/admin/class/insert">Insert</a></th>
+        <th scope="col"><a href="/admin/class/delete/{{ $datas->id }}">Delete</a></th>
+        <th scope="col"><a href="/admin/class/delete/{{ $datas->id }}">Edit</a></th>
+        
       </tr>
     </tbody>
     @endforeach

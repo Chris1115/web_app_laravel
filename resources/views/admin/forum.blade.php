@@ -6,12 +6,12 @@
 
 @section('content')
 <table class="table table-hover">
-  <thead>
+  <thead style="text-align: center">
     <tr style="background-color: whitesmoke">
-      <th scope="col">#</th>
+      <th scope="col">ID</th>
       <th scope="col">Title</th>
       <th scope="col">Question</th>
-      <th scope="col"></th>
+      <th colspan="3">Action</th>
     </tr>
   </thead>
   @foreach ($data as $forum)
@@ -20,7 +20,9 @@
         <th scope="row">{{ $forum->id }}</th>
         <th scope="col">{{ $forum->title }}</th>
         <th scope="col">{{ $forum->question }}</th>
+        <th scope="col"><a href="/admin/forum/add">Insert</a></th>
         <th scope="col"><a href="/admin/forum/delete/{{ $forum->id }}">Delete</a></th>
+        <th scope="col"><a href="/admin/forum/edit/{{ $forum->id }}">Edit</a></th>
       </tr>
     </tbody>
     @endforeach

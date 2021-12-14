@@ -8,20 +8,17 @@
 @foreach ($classdtl as $item)
 <table class="table table-bordered">
     <thead style="text-align: center">
-        <td>Group</td>
-        <td>Class</td>
+        <td>Id</td>
+        <td>Name</td>
         <td>Mentor</td>
         <td>Schedule</td>
     </thead>
     <tbody style="text-align: center">
       <tr>
-        <input type="hidden" name="course_id" value="{{ $item->course_id }}">
-        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-        <input type="hidden" name="name" value="{{ $item->name }}">
-        <input type="hidden" name="mentor" value="{{ $item->mentor }}">
-        <input type="hidden" name="schedule" value="{{ $item->schedule }}">
+        <input type="hidden" name="users_id" value="{{ auth()->user()->id }}"> 
+        <input type="hidden" name="class_id" value="{{ $item->class_id }}">
         <th>{{ $item->id }}</th>
-        <td>{{ $item->name }}</td>
+        <th>{{ $item->names }}</th>
         <td>{{ $item->mentor }}</td>
         <td >{{ $item->schedule }}</td>
       </tr>

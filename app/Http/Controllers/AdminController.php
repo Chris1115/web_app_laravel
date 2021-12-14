@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\classes;
 use App\Models\Forum;
 use App\Models\forum_chat;
 use App\Models\Course;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
+    
     public function display($page){
         switch ($page) {
             case 'dashboard':
@@ -47,7 +49,7 @@ class AdminController extends Controller
                 case 'class':
                     return view('admin/class', [
                         "title" => "Admin || Class",
-                        "data" => takenclass::getAll()
+                        "data" => classes::getAll()
                     ]);
 
             case 'create':
@@ -86,6 +88,7 @@ class AdminController extends Controller
         }
     }
     
+    
     public function delete($table, $id)
     {
         switch ($table) {
@@ -104,7 +107,7 @@ class AdminController extends Controller
                 break;
 
             case 'class':
-                takenclass::deleteById($id);
+                classes::deleteById($id);
                 break;
                 
             case 'course':
@@ -140,12 +143,23 @@ class AdminController extends Controller
 
         return redirect('/admin/'.$request['table']);
     }
-
-    public function viewcomments($id){
+        public function viewcomments($id){
         return view('admin/newsdtl', [
             "title" => "Admin || News Comments",
             "commen" => news_comment::getById($id),
             "news" => news::getById($id)
+        ]);
+    }
+
+    public function addClassesone(Request $request){
+        classes::add($request->course_id, $request->mentor, $request->schedule);
+        return redirect('/admin/class');
+    }
+
+    public function insrtclass(){
+        return view('admin/insertclass', [
+            "title" => "Admin || AddClasses",
+            "dataf" => course::getAll()
         ]);
     }
 }

@@ -66,7 +66,7 @@ class UserController extends Controller
     public function myclass($id){
         return view('user/myclass', [
             "title" => "User || MyClass",
-            "classdtl" => takenclass::getById($id),
+            "classdtl" => takenclass::getByclass($id),
             "classy" => takenclass::getAll()
         ]);
     }
@@ -74,7 +74,7 @@ class UserController extends Controller
     public function class($id){
         return view('user/class', [
             "title" => "User || Class",
-            "classdtl" => classes::getById($id),
+            "classdtl" => classes::getclass($id),
             "class" => course::getById($id)
         ]);
     }
@@ -96,7 +96,7 @@ class UserController extends Controller
     }
 
     public function addClass(Request $request){
-        takenclass::add( $request->course_id,$request->username, $request->name, $request->mentor, $request->schedule);
+        takenclass::add($request->users_id, $request->course_id, $request->class_id);
         return redirect('/user/course');
     }
 

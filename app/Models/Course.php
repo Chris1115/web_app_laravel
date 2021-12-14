@@ -13,7 +13,7 @@ class Course extends Model
 
     public static function add($name, $description){
         Course::create([
-            "name" => $name,
+            "names" => $name,
             "description" => $description
         ]);
     }

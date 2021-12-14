@@ -28,6 +28,7 @@ Route::post('/register', [PublicController::class, 'addUser'])->middleware('gues
 
 // Routes for admin access page
 Route::get('/admin/{page}', [AdminController::class, 'display'])->middleware('auth');
+Route::get('/admin/class/insert', [AdminController::class, 'insrtclass'])->middleware('auth');
 
 Route::get('/admin/{table}/delete/{id}', [AdminController::class, 'delete'])->middleware('auth');
 Route::get('/admin/{table}/edit/{id}', [AdminController::class, 'edit'])->middleware('auth');
@@ -36,6 +37,7 @@ Route::get('/admin/news/view/{id}', [AdminController::class, 'viewcomments'])->m
 Route::post('/admin/course/add', [AdminController::class, 'Add'])->middleware('auth');
 Route::post('/admin/news/add', [AdminController::class, 'Add'])->middleware('auth');
 Route::post('/admin/forum/add', [AdminController::class, 'Add'])->middleware('auth');
+Route::post('/admin/class/addclasses', [AdminController::class, 'addclassesone'])->middleware('auth');
 Route::get('/admin/{table}/add', [AdminController::class, 'createRoutes'])->middleware('auth');
 
 
