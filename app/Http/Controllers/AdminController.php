@@ -82,6 +82,12 @@ class AdminController extends Controller
                     "title" => "Admin || create",
                     "table" => $table
                 ]);
+
+            case 'class':
+                return view('admin/insertclass', [
+                    "title" => "Admin || AddClasses",
+                    "dataf" => course::getAll()
+                ]);
                 
             default:
                 return redirect('/admin');
@@ -137,13 +143,18 @@ class AdminController extends Controller
                 Course::add($request['name'], $request['description']);
                 break;
 
+            case 'class':
+                classes::add($request['course_id'], $request['mentor'], $request['schedule']);
+                break;
+
             default:
                 return redirect('/admin');
         }
 
         return redirect('/admin/'.$request['table']);
     }
-        public function viewcomments($id){
+
+    public function viewcomments($id){
         return view('admin/newsdtl', [
             "title" => "Admin || News Comments",
             "commen" => news_comment::getById($id),
@@ -151,15 +162,68 @@ class AdminController extends Controller
         ]);
     }
 
-    public function addClassesone(Request $request){
-        classes::add($request->course_id, $request->mentor, $request->schedule);
-        return redirect('/admin/class');
+    public function edit($table, $id)
+    {
+        switch ($table) {  
+            case 'forum':
+                return view('admin/forumedit', [
+                    "title" => "Admin || Edit",
+                    "data" => Forum::getById($id),
+                    "table" => $table
+                ]);
+                
+            case 'news':
+                return view('admin/newsedit', [
+                    "title" => "Admin || Edit",
+                    "data" => news::getById($id),
+                    "table" => $table
+                ]);
+
+            case 'class':
+                return view('admin/classedit', [
+                    "title" => "Admin || Edit",
+                    "data" => classes::getById($id),
+                    "table" => $table
+                ]);
+                break;
+                
+            case 'course':
+                return view('admin/courseedit', [
+                    "title" => "Admin || Edit",
+                    "data" => Course::getById($id),
+                    "table" => $table
+                ]);
+                break;
+                
+            default:
+                # code...
+                break;
+        }
     }
 
-    public function insrtclass(){
-        return view('admin/insertclass', [
-            "title" => "Admin || AddClasses",
-            "dataf" => course::getAll()
-        ]);
+    public function edited(Request $request)
+    {
+        switch ($request['table']) {
+            case 'forum':
+                Forum::updateData($request['title'], $request['question'], $request['id']);
+                break;
+
+            case 'news':
+                news::updateData($request['headline'], $request['content'], $request['id']);
+                break;
+
+            case 'course':
+                Course::updateData($request['names'], $request['description'], $request['id']);
+                break;
+
+            case 'class':
+                classes::updateData($request['mentor'], $request['schedule'], $request['id']);
+                break;
+
+            default:
+                return redirect('/admin');
+        }
+
+        return redirect('/admin/'.$request['table']);
     }
 }

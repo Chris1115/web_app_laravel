@@ -33,6 +33,10 @@ class Course extends Model
         return $course;
     }
 
+    public static function updateData($names, $description, $id){
+        DB::table('courses')->where('id', $id)->update(['names' => $names, 'description' => $description]);
+    }
+
     public function classes(){
         return $this->hasMany(classes::class);
     }

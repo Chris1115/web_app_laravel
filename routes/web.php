@@ -32,12 +32,10 @@ Route::get('/admin/class/insert', [AdminController::class, 'insrtclass'])->middl
 
 Route::get('/admin/{table}/delete/{id}', [AdminController::class, 'delete'])->middleware('auth');
 Route::get('/admin/{table}/edit/{id}', [AdminController::class, 'edit'])->middleware('auth');
+Route::post('/admin/{table}/edited', [AdminController::class, 'edited'])->middleware('auth');
 Route::get('/admin/news/view/{id}', [AdminController::class, 'viewcomments'])->middleware('auth');
 
-Route::post('/admin/course/add', [AdminController::class, 'Add'])->middleware('auth');
-Route::post('/admin/news/add', [AdminController::class, 'Add'])->middleware('auth');
-Route::post('/admin/forum/add', [AdminController::class, 'Add'])->middleware('auth');
-Route::post('/admin/class/addclasses', [AdminController::class, 'addclassesone'])->middleware('auth');
+Route::post('/admin/{table}/add', [AdminController::class, 'add'])->middleware('auth');
 Route::get('/admin/{table}/add', [AdminController::class, 'createRoutes'])->middleware('auth');
 
 

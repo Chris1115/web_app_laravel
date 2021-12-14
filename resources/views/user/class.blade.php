@@ -33,5 +33,5 @@
       @endforeach
     </tbody>
   </table>
-<a href="/user/course"><button class="btn btn-outline-primary">back to news</button></a>
+<a href="/user/course"><button class="btn btn-outline-primary">back to course</button></a>
 @endsection

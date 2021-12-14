@@ -22,9 +22,9 @@
         <th scope="row">{{ $datas->course_id }}</th>
         <th scope="row">{{ $datas->mentor }}</th>
         <th scope="row">{{ $datas->schedule }}</th>
-        <th scope="col"><a href="/admin/class/insert">Insert</a></th>
+        <th scope="col"><a href="/admin/class/add">Insert</a></th>
         <th scope="col"><a href="/admin/class/delete/{{ $datas->id }}">Delete</a></th>
-        <th scope="col"><a href="/admin/class/delete/{{ $datas->id }}">Edit</a></th>
+        <th scope="col"><a href="/admin/class/edit/{{ $datas->id }}">Edit</a></th>
         
       </tr>
     </tbody>

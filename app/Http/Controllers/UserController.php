@@ -67,7 +67,7 @@ class UserController extends Controller
         return view('user/myclass', [
             "title" => "User || MyClass",
             "classdtl" => takenclass::getByclass($id),
-            "classy" => takenclass::getAll()
+            // "classy" => takenclass::getAll()
         ]);
     }
 

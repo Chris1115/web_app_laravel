@@ -21,6 +21,10 @@ class Forum extends Model
         ]);
     }
 
+    public static function updateData($title, $question, $id){
+        DB::table('forums')->where('id', $id)->update(['title' => $title, 'question' => $question]);
+    }
+
     public static function getAll(){
         $forums = DB::table('forums')->get();
         return $forums;

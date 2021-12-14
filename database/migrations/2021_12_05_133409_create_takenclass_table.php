@@ -17,7 +17,7 @@ class CreateTakenclassTable extends Migration
             $table->id();
             $table->foreignId('users_id');
             $table->foreignId('course_id');
-            $table->string('class_id');
+            $table->foreignId('classes_id');
             $table->timestamps();
         });
     }

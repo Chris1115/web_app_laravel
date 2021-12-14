@@ -20,7 +20,7 @@ class takenclass extends Model
     }
 
     public static function getById($id){
-        $class = DB::table('takenclasses')->where('username', $id)->get();
+        $class = DB::table('takenclasses')->where('users_id', $id)->get();
 
         return $class;
     }
@@ -36,22 +36,26 @@ class takenclass extends Model
     }
 
     public static function getByclass($id){
-        $comments = DB::table('takenclasses')
+        $registeredClass = DB::table('takenclasses')
             ->join('users', 'takenclasses.users_id', '=', 'users.id')
-            ->join('classes', 'takenclasses.class_id', '=', 'classes.id')
+            ->join('classes', 'takenclasses.classes_id', '=', 'classes.id')
             ->join('courses', 'takenclasses.course_id', '=', 'courses.id')
             ->select('*')
             ->where('users_id', $id)
             ->get();
 
-        return $comments;
+        return $registeredClass;
     }
 
-    public function User(){
+    public function users(){
         return $this->belongsTo(User::class);
     }
 
     public function Course(){
         return $this->belongsTo(Course::class);
+    }
+
+    public function classes(){
+        return $this->belongsTo(classes::class);
     }
 }

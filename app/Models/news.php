@@ -12,10 +12,10 @@ class news extends Model
     // use HasFactory;
     protected $guarded = ['id'];
 
-    public static function add($name, $mentor){
+    public static function add($headline, $content){
         news::create([
-            "headline" => $name,
-            "content" => $mentor
+            "headline" => $headline,
+            "content" => $content
         ]);
     }
 
@@ -28,6 +28,10 @@ class news extends Model
         $news = DB::table('news')->where('id', $id)->first();
 
         return $news;
+    }
+
+    public static function updateData($headline, $content, $id){
+        DB::table('news')->where('id', $id)->update(['headline' => $headline, 'content' => $content]);
     }
 
     public static function deleteById($id){

@@ -1,4 +1,6 @@
-insert into courses (name, description) values ('Business Model Canvas', 'DI dalam course ini, anda akan mempelajari secara lebih mendetail sebuah metode penentuan model bisnis yang menjadi dasar kerangka dalam sebuah bisnis');
+use bisniscap
+
+insert into courses (names, description) values ('Business Model Canvas', 'DI dalam course ini, anda akan mempelajari secara lebih mendetail sebuah metode penentuan model bisnis yang menjadi dasar kerangka dalam sebuah bisnis');
 
 insert into news (headline, content) values ('Biofarma Siap Menerima Investasi dari Bill Gates', 'Bill Gates mengapresiasi upaya Indonesia dalam menekan penyebaran pandemi Covid-19 dengan cepat, serta meratanya program vaksinasi nasional sehingga indikator pandemi di Indonesia menurun drastis.');
 

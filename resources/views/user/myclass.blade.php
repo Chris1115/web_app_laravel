@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+@dump($classdtl)
 @foreach ($classdtl as $item)
 <table class="table table-bordered">
     <thead style="text-align: center">

@@ -26,6 +26,12 @@ class classes extends Model
         return $class;
     }
 
+    public static function getById($id){
+        $news = DB::table('classes')->where('id', $id)->first();
+
+        return $news;
+    }
+
     
     public static function getclass($id){
         $class = DB::table('classes')
@@ -37,16 +43,23 @@ class classes extends Model
         return $class;
     }
 
+    public static function updateData($mentor, $schedule, $id){
+        DB::table('classes')->where('id', $id)->update(['mentor' => $mentor, 'schedule' => $schedule]);
+    }
 
     public static function deleteById($id){
         DB::table('classes')->where('id', $id)->delete();
     }
 
-    public function User(){
+    public function users(){
         return $this->belongsTo(User::class);
     }
 
     public function Course(){
         return $this->belongsTo(Course::class);
+    }
+
+    public function takenclasses(){
+        return $this->hasMany(takenclass::class);
     }
 }

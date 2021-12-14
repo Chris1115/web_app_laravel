@@ -21,7 +21,7 @@
           <a class="nav-link {{ ($title === "Course") ? 'active' : '' }}" href="/user/course">Courses</a>
           <a class="nav-link {{ ($title === "News") ? 'active' : '' }}" href="/user/news">News</a>
           <a class="nav-link {{ ($title === "Forums") ? 'active' : '' }}" href="/user/forum">Forums</a>
-          <a class="nav-link {{ ($title === "MyClass") ? 'active' : '' }}" href="/user/myclass/{{ auth()->user()->id}}">MyClass</a>
+          <a class="nav-link {{ ($title === "Class") ? 'active' : '' }}" href="/user/myclass/{{ auth()->user()->id}}">Class</a>
         @endif
         @endauth
       </div>

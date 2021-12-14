@@ -5,31 +5,29 @@
 @endsection
 
 @section('content')
-<form action="/admin/class/add" method="POST">
+@dump($data)
+<form action="/admin/class/edited" method="POST">
   @csrf
 <table class="table table-hover">
     <tbody>
       <tr style="background-color: white">
-        <th scope="row">Course_ID</th>
+        <th scope="row">Course</th>
         <th scope="col">
-          <select class="form-select" aria-label="Default select example" name="course_id">
-            <option selected>Open this select menu</option>
-            @foreach ($dataf as $item)
-            <option value="{{ $item->id }}">{{ $item->names }}</option>
-            @endforeach
+          <select class="form-select" aria-label="Default select example" name="id">
+            <option value="{{ $data->id }}">{{ $data->id }}</option>
           </select>
         </th>
       </tr>
       <tr>
           <th scope="row">Mentor</th>
           <th scope="col"> 
-            <input type="text" name="mentor" value="">
+            <input type="text" name="mentor" value="{{ $data->mentor }}">
           </th>
       </tr>
       <tr>
         <th scope="row">Schedule</th>
         <th scope="col"> 
-          <input type="text" name="schedule" value="">
+          <input type="text" name="schedule" value="{{ $data->schedule }}">
         </th>
     </tr>
       <tr>
