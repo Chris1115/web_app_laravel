@@ -38,7 +38,7 @@ class takenclass extends Model
     public static function getByclass($id){
         $registeredClass = DB::table('takenclasses')
             ->join('users', 'takenclasses.users_id', '=', 'users.id')
-            ->join('classes', 'takenclasses.classes_id', '=', 'classes.id')
+            ->join('classes', 'takenclasses.class_id', '=', 'classes.id')
             ->join('courses', 'takenclasses.course_id', '=', 'courses.id')
             ->select('*')
             ->where('users_id', $id)
