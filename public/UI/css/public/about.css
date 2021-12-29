@@ -1,12 +1,27 @@
-#logo {
-    background-color: rgb(71, 69, 69);
+#logo, #profile {
+    background-color: #181E28;
 }
 
 #logo-frame {
-    background-color: whitesmoke;
+    background-color: #DBE8E1;
 }
 
 #logo-text {
-    background-color: whitesmoke;
+    background-color: #DBE8E1;
     text-align: justify;
+}
+
+body{
+    background-color: #DBE8E1;
+}
+
+.rounded{
+    border-radius: 5% !important;
+}
+
+.circle{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: white;
 }

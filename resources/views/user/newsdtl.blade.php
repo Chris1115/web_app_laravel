@@ -32,5 +32,4 @@
       <a href="/user/news"><button class="btn btn-outline-primary">back to news</button></a>
   </div>
 </div>
-@dump($comment, $news, auth()->user())
 @endsection

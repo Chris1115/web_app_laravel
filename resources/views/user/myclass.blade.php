@@ -5,7 +5,9 @@
 @endsection
 
 @section('content')
-@dump($classdtl)
+@if ($classdtl == NUll)
+    <h1>No Class, yet</h1>
+@else
 @foreach ($classdtl as $item)
 <table class="table table-bordered">
     <thead style="text-align: center">
@@ -26,4 +28,6 @@
       @endforeach
     </tbody>
   </table>
+@endif
+
 @endsection

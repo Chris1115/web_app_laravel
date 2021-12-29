@@ -32,5 +32,4 @@
       <a href="/user/forum"><button class="btn btn-outline-primary">back to forum</button></a>
   </div>
 </div>
-@dump($response, $forum, auth()->user())
 @endsection

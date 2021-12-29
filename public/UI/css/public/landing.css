@@ -1,7 +1,46 @@
-#hero {
-    background-color: #272727;
+body{
+    background-color: #DBE8E1;
 }
 
-#carousel {
-    background-color: rgb(85, 85, 85);
+#hero{
+    background-color: #fff;
+    width: 80%;
+    height: 400px;
+    border-radius: 5%;
+}
+
+#section1{
+    background-color: #181E28;
+    width: auto;
+    height: auto;
+}
+
+.rounded{
+    border-radius: 10% !important;
+}
+
+#section1:hover{
+    background-color: #1e2531;
+}
+
+.card:hover{
+    background-color: rgb(231, 231, 231);
+}
+
+a:link{
+    text-decoration: none;
+}
+
+#explore:hover{
+    animation: font-bigger .5s ease-in-out forwards;
+}
+
+@keyframes font-bigger{
+    from{
+
+    }
+
+    to{
+        font-size: 100px;
+    }
 }

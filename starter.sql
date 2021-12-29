@@ -1,3 +1,5 @@
+create database bisniscap;
+
 use bisniscap
 
 insert into courses (names, description) values ('Business Model Canvas', 'DI dalam course ini, anda akan mempelajari secara lebih mendetail sebuah metode penentuan model bisnis yang menjadi dasar kerangka dalam sebuah bisnis');

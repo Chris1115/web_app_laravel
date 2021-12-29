@@ -18,21 +18,38 @@
 @section('content')
     <div class="row p-5">
         <div class="col-5 p-5 offset-1">
-            <div class="card shadow-lg">
+            <div class="card rounded shadow-lg">
                 <div class="card-body p-2">
-                  <h1 class="card-title text-center display1">Vision</h1>
-                  <p class="card-text fs-4 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quis quaerat quidem optio esse, odit ea voluptatem repellat quae eaque mollitia eligendi iste laborum vel deserunt repellendus nam voluptates vitae necessitatibus nemo totam dignissimos. Ut!</p>
+                  <h1 class="card-title text-center display-3">Vision</h1>
+                  <p class="card-text p-3 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quis quaerat quidem optio esse, odit ea voluptatem repellat quae eaque mollitia eligendi iste laborum vel deserunt repellendus nam voluptates vitae necessitatibus nemo totam dignissimos. Ut!</p>
                 </div>
             </div>
         </div>
         <div class="col-5 p-5">
-            <div class="card shadow-lg">
+            <div class="card rounded shadow-lg">
                 <div class="card-body">
-                  <h1 class="card-title text-center display1">Mission</h1>
-                  <p class="card-text fs-4 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quis quaerat quidem optio esse, odit ea voluptatem repellat quae eaque mollitia eligendi iste laborum vel deserunt repellendus nam voluptates vitae necessitatibus nemo totam dignissimos. Ut!</p>
+                  <h1 class="card-title text-center display-3">Mission</h1>
+                  <p class="card-text p-3 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quis quaerat quidem optio esse, odit ea voluptatem repellat quae eaque mollitia eligendi iste laborum vel deserunt repellendus nam voluptates vitae necessitatibus nemo totam dignissimos. Ut!</p>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row p-5" id="profile">
+        <div class="col-1"></div>
+        <div class="col-2">
+            <img src="{{ asset('icons/person-circle.svg')}}" class="circle">
+        </div>
+        <div class="col-1"></div>
+        <div class="col-1"></div>
+        <div class="col-2">
+            <img src="{{ asset('icons/person-circle.svg')}}" class="circle">
+        </div>
+        <div class="col-1"></div>
+        <div class="col-1"></div>
+        <div class="col-2 px-5">
+            <img src="{{ asset('icons/person-circle.svg')}}" class="circle">
+        </div>
+        <div class="col-1"></div>
     </div>
 @endsection
 

@@ -8,6 +8,12 @@
     <!-- Bootstrap CSS -->
     <link href="{{ asset('UI/css/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('UI/icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <style>
+      .navbar-light{
+        background:#DBE8E1 !important; 
+      }
+    </style>
+
     @yield('style')
 
     <title>{{ $title }}</title>
