@@ -5,10 +5,10 @@
 @endsection
 
 @section('content')
-<div class="row p-3">
+<div class="row">
   @foreach ($data as $course)
-  <div class="col-4">
-    <div class="card text-center" style="width: 18rem;">
+  <div class="col-3 mb-5 px-5">
+    <div class="card text-center rounded shadow-lg">
       <div class="card-body">
         <h3 class="card-title">{{ $course->names }}</h3>
         <p class="card-text">{{ $course->description }}</p>

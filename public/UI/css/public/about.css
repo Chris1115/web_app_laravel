@@ -1,14 +1,9 @@
-#logo, #profile {
+#hero {
     background-color: #181E28;
 }
 
 #logo-frame {
     background-color: #DBE8E1;
-}
-
-#logo-text {
-    background-color: #DBE8E1;
-    text-align: justify;
 }
 
 body{
@@ -20,8 +15,33 @@ body{
 }
 
 .circle{
+    display: block;
     width: 200px;
     height: 200px;
     border-radius: 50%;
     background-color: white;
+}
+
+
+#hero:hover{
+    background-color: #1e2531;
+}
+
+.card:hover{
+    background-color: rgb(231, 231, 231);
+}
+
+.circle:hover{
+    animation: profile-bigger .15s ease-in-out forwards;
+}
+
+@keyframes profile-bigger{
+    from{
+
+    }
+
+    to{
+        width: 210px;
+        height: 210px;
+    }
 }

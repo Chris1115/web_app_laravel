@@ -4,8 +4,7 @@
 <link href="{{ asset('UI/css/public/carousel.css') }}" rel="stylesheet" >
 <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
 <link href="carousel.css" rel="stylesheet">
-<!-- Bootstrap core CSS -->
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset("UI/css/user/news.css") }}">
 
 <style>
   .bd-placeholder-img {
@@ -29,17 +28,21 @@
   <body>
 <main>
 
-    <div class="row">
+    <div class="flex-column p-4">
       @foreach ($data as $news)
-      <div class="col-lg-4">
-        <div class="card px-4 py-5">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
-        <div class="card-body">
-            <h2 class="card-title">{{ $news->headline }}</h2>
-            <p class="card-text">{{ $news->content }}</p>
-            <a href="/user/news/{{ $news->id }}"><button class="btn btn-primary">see details</button></a>
-        </div>
-      </div>
+        <div class="card p-3 mb-3 rounded">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-2">
+                <img src="" id="img">
+              </div>
+              <div class="col-10">
+                <h2 class="card-title">{{ $news->headline }}</h2>
+                <p class="card-text">{{ $news->content }}</p>
+                <a href="/user/news/{{ $news->id }}"><button class="btn btn-primary">see details</button></a>
+              </div>
+            </div>
+          </div>
       </div>
     @endforeach
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>

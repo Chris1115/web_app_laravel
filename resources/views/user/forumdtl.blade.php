@@ -1,13 +1,11 @@
 @extends('layouts/user')
 
 @section('style')
-  {{-- <link href="{{ asset('UI/css/user/course.css') }}" rel="stylesheet" > --}}
+  <link href="{{ asset('UI/css/user/forum.css') }}" rel="stylesheet" >
 @endsection
 
 @section('content')
-<div class="card px-4 py-5">
-  <div class="card-body">
-      <h2 class="card-title">{{ $forum->title }}</h2>
+<h2 class="display-5">{{ $forum->title }}</h2>
       <p class="card-text">{{ $forum->question }}</p>
       <hr size="5" color="#fff">
       <div class="row">
@@ -30,6 +28,4 @@
         </div>
       </div>
       <a href="/user/forum"><button class="btn btn-outline-primary">back to forum</button></a>
-  </div>
-</div>
 @endsection

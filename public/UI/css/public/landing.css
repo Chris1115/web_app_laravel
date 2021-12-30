@@ -32,7 +32,7 @@ a:link{
 }
 
 #explore:hover{
-    animation: font-bigger .5s ease-in-out forwards;
+    animation: font-bigger .3s ease-in-out forwards;
 }
 
 @keyframes font-bigger{

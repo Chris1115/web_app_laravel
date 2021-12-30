@@ -7,6 +7,11 @@
 
     <!-- Bootstrap CSS -->
     <link href="{{ asset('UI/css/bootstrap/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+      .navbar-light{
+        background:#DBE8E1 !important; 
+      }
+    </style>
     @yield('style')
 
     <!-- css -->
@@ -21,7 +26,7 @@
       <div class="col-2">
         @include('partials.sidebars')
       </div>
-      <div class="col-10" style="background-color: whitesmoke">
+      <div class="col-10">
         @yield('content')
       </div>
     </div>
