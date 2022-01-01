@@ -1,0 +1,4 @@
+Biru terang = #DBE8E1 - rgb(219, 232, 225)
+Merah       = #E10032 - rgb(225, 0, 50)
+Biru        = #034687 - rgb(3, 70, 135)
+Hitam       = #181E28 - rgb(24, 30, 40)
